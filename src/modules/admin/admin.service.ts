@@ -39,12 +39,7 @@ export class AdminService {
     return admin;
   }
 
-  async validateUser(loginAdminDto: AdminLoginDTO) {
-    console.log('AMMA HERE');
-    const { login, password } = loginAdminDto;
-
-    console.log(loginAdminDto);
-
+  async validateUser(login, password) {
     const user = await this.adminModel.findOne({ login });
 
     const inValidCredentials = new BadRequestException(

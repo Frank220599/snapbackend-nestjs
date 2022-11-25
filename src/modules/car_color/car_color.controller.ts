@@ -12,7 +12,7 @@ import { CarColorService } from './car_color.service';
 import { CreateCarColorDto } from './dto/create-car_color.dto';
 import { UpdateCarColorDto } from './dto/update-car_color.dto';
 
-@Controller('car-color')
+@Controller('colors')
 export class CarColorController {
   constructor(private readonly carColorService: CarColorService) {}
 

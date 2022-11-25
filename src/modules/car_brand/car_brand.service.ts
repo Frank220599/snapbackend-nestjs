@@ -51,7 +51,7 @@ export class CarBrandService {
     }
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     const car = await this.carBrandModel.findById(id);
 
     if (!car) {

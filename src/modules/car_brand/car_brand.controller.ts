@@ -13,7 +13,7 @@ import { CreateCarBrandDto } from './dto/create-car_brand.dto';
 import { UpdateCarBrandDto } from './dto/update-car_brand.dto';
 import { getPaginationParams } from '../../utils/getPaginationParams';
 
-@Controller('carBrand')
+@Controller('car/brands')
 export class CarBrandController {
   constructor(private readonly carBrandService: CarBrandService) {}
 
@@ -29,7 +29,7 @@ export class CarBrandController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.carBrandService.findOne(+id);
+    return this.carBrandService.findOne(id);
   }
 
   @Patch(':id')

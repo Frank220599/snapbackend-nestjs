@@ -5,6 +5,7 @@ export type PaginationParams = {
 };
 
 export const getPaginationParams = (query: any) => {
+  console.log(query);
   const page: number = query.page ? +query.page : 1;
   const perPage: number = query.perPage ? +query.perPage : 10;
 

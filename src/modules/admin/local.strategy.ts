@@ -7,12 +7,11 @@ import { AdminLoginDTO } from './dto/login-admin.dto';
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor(private adminService: AdminService) {
-    super({ usernameField: 'login' });
+    super();
   }
 
-  async validate(dto: AdminLoginDTO): Promise<any> {
-    console.log({ FuCk: 'FUCK' });
-    const user = await this.adminService.validateUser(dto);
+  async validate(login, password): Promise<any> {
+    const user = await this.adminService.validateUser(login, password);
     console.log({ user });
     if (!user) {
       throw new UnauthorizedException();
